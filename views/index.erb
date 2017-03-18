@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Slacker News Aggregator</title>
+  </head>
+
+  <body>
+    <h2>Slacker News</h2>
+    <h3>Articles</h3>
+
+    <ul>
+      <% @articles.each do |article| %>
+        <li><%= "#{article[0]} :" %><%= " #{article[2]}" %></li>
+        <a href="<%= article[1] %>" target="_blank"> <%= article[1] %></a>
+      <% end %>
+    </ul>
+
+  </body>
+</html>

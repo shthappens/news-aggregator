@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Slacker News Aggregator</title>
+  </head>
+
+  <body>
+    <h2>Slacker News</h2>
+    <h3>Submit your favorite Slacker News here!</h3>
+    <h3>
+      <% if @error_message %>
+        <%= @error_message %>
+      <% end %>
+    </h3>
+
+    <form action="/articles/new" method="post">
+
+      <label for="article_title">Title:</label>
+      <input type="text" id="article_title" name="article_title" required>
+
+      <label for="article_url">URL:</label>
+      <input type="url" pattern="https?://.+" id="article_url" name="article_url" required>
+
+      <label for="article_desc">Description:</label>
+      <input type="text" id="article_desc" name="article_desc" minlength="20" required>
+
+      <input type="submit">
+    </form>
+
+  </body>
+</html>
